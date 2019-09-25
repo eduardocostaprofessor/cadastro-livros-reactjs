@@ -75,8 +75,9 @@
     }
 
     .add-product__icon-button {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
+        width: 35px;
+        height: 35px;
+        border-radius: 8px;
+        font-size: 1.2rem;
     }
 }
