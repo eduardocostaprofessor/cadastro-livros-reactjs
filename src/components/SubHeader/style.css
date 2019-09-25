@@ -1,0 +1,36 @@
+.subheader {
+    display: flex;
+    align-items: center;
+    flex: 2;
+    max-height: 80px;
+    padding: 10px 25px;
+    /* border: 1px solid white; */
+}
+
+.subheader__title {
+    margin-left: 15px;
+    font-size: 1.4rem;
+}
+
+.subheader__book {
+    font-size: 1.4rem;
+    font-family: 'Dosis-ExtraLight';
+}
+
+@media screen and ( min-width: 768px) {
+    .subheader { max-height: 180px; }
+    .subheader__title, 
+    .subheader__book {
+        font-size: 2.8rem;
+    }
+    
+}
+
+@media screen and ( min-width: 992px) {
+    .subheader { max-height: 70px; }
+    .subheader__title, 
+    .subheader__book {
+        font-size: 1.2rem;
+    }
+    
+}

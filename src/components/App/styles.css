@@ -1,0 +1,18 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 50px); /* desconta o header que está fora do container do app */
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+      height: calc(100% - 80px);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .App {
+      height: calc(100% - 50px);
+  }
+}

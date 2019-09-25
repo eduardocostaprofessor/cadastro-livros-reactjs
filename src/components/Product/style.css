@@ -1,0 +1,123 @@
+.product-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 60px;
+    padding: 5px 15px 5px 5px;
+    margin-bottom: 20px;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+    transition: box-shadow .5s;
+}
+
+.product:hover {
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, .2);
+}
+
+.product__image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 10px 8px 10px rgba(228, 224, 224, .5);
+    border: 1px solid rgba(228, 224, 224, .6);
+    border-radius: 50%;
+}
+
+.product__image {
+    width: 30px;
+}
+
+.product__info {
+    width: 60%;
+}
+
+.product__title {
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.product__qtd {
+    width: 100%;
+    margin-top: 5px;
+    font-size: .75rem;
+    font-weight: 200;
+    color: gray;
+}
+
+.product__add {
+    font-size: .9rem;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.product__add:hover {
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, .1);
+    transition: box-shadow .5s;
+}
+
+@media screen and ( min-width: 768px) {
+    .product {
+        height: 120px;
+    }
+
+    .product__image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .product__image { width: 65px; }
+
+    .product__title {
+        font-size: 1.6rem;
+    }
+    
+    .product__qtd {
+        width: 100%;
+        margin-top: 5px;
+        font-size: 1.2rem;
+    }
+    
+    .product__add {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and ( min-width: 992px) {
+    .product {
+        width: 85%;
+        padding-left: 15px;
+        height: 70px;
+    }
+
+    .product__image-box {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .product__image { width: 35px; }
+
+    .product__title,
+    .product__add {
+        font-size: 1rem;
+    }
+
+    .product__qtd {
+        font-size: .9rem;
+    }
+}

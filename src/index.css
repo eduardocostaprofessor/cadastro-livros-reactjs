@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Dosis-ExtraLight';
+  src: url('./fonts/Dosis/Dosis-ExtraLight.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PTSans-Regular';
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Dosis-ExtraLight';
+  background-color: #53c1bd;
+  color: white;
+}
+
+/* container do site que está em index.html */
+
+#root {
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+
+ @media screen and (min-width: 992px) {
+  .App {
+    max-width: 650px;
+  }
+} 

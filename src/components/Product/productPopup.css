@@ -1,0 +1,125 @@
+/* NEW PRODUCT COMPONENT */
+.add-product__magic-show:checked ~ .new-book{
+    left: 3%;
+}
+
+.new-book {
+    position: absolute;
+    width: 95%;
+    height: 60px;
+    top: 0%;
+    left: -110%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 0 0px;
+    background-color: #53c1bd;
+    z-index: 22;
+    border-radius: 10px;
+    transition: left .3s;
+}
+
+.new-book__icon-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: .9rem;
+    color: #53c1bd;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+}
+.new-book__icon-close:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+}
+.new-book__input-field {
+    width: 40px;
+    padding: 0 5px;
+    height: 25px;
+    outline: none;
+    color: #53c1bd;
+    font-size: 0.75rem;
+    text-align: center;
+    border: 1px solid #53c1bd;
+    border-radius: 5px;
+}
+
+.new-book__input-field:focus {
+    box-shadow: 1px 0px 10px rgba(0, 0, 0, .5);
+}
+
+.new-book__input-field::placeholder {
+    color: grey;
+}
+
+.new-book__buttom-field {
+    padding: 5px 10px;
+    font-size: .75rem;
+    color: white;
+    outline: none;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.new-book__buttom-field:active {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+}
+
+@media screen and ( min-width: 768px ) {
+    .new-book {
+        height: 120px;
+        font-size: 1.6rem;
+    }
+    .new-book__input-field {
+        width: 65px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .new-book__buttom-field {
+        padding: 10px 25px;
+        font-size: 1.3rem;
+    }
+
+    .new-book__icon-close {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and ( min-width: 992px ) {
+    .add-product__magic-show:checked ~ .new-book{
+        left: 7.5%;
+    }
+
+    .new-book {
+        width: 85%;
+        height: 70px;
+        top: 0;
+        padding: 0 15px;
+        font-size: 1rem;
+    }
+
+    .new-book__input-field {
+        width: 70px;
+        height: 30px;
+        text-align: center;
+        font-size: .85rem;
+    }
+
+    .new-book__buttom-field {
+        padding: 7px 15px;
+        font-size: .8rem;
+    }
+
+    .new-book__icon-close {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 1rem;
+    }
+}
