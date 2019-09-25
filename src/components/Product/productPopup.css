@@ -39,6 +39,10 @@
     height: 25px;
     outline: none;
     color: #53c1bd;
+    background-color: white;
+    -webkit-text-fill-color: #53c1bd;
+    /*required on iOS */
+    opacity: 1;  
     font-size: 0.75rem;
     text-align: center;
     border: 1px solid #53c1bd;
@@ -51,6 +55,7 @@
 
 .new-book__input-field::placeholder {
     color: grey;
+    -webkit-text-fill-color: grey;
 }
 
 .new-book__buttom-field {
