@@ -56,7 +56,15 @@
     font-weight: 200;
     color: gray;
 }
-
+.product__action-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 50px; */
+    /* border: 1px solid salmon; */
+    
+}
 .product__add {
     font-size: .9rem;
     font-weight: 200;

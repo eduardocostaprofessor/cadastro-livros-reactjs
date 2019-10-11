@@ -1,9 +1,10 @@
 /* NEW PRODUCT COMPONENT */
-.add-product__magic-show:checked ~ .new-book{
-    left: 3%;
-}
+.new-book__magic-show, .out-book__magic-show { display: none; }
+.new-book__magic-show:checked ~ .new-book { left: 3%; }
+.out-book__magic-show:checked ~ .out-book { left: 3%; }
 
-.new-book {
+.new-book, 
+.out-book {
     position: absolute;
     width: 95%;
     height: 60px;
@@ -12,14 +13,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px 0 0px;
+    padding: 0 22px 0 0px;
     background-color: #53c1bd;
     z-index: 22;
     border-radius: 10px;
     transition: left .3s;
 }
 
-.new-book__icon-close {
+.new-book__icon-close, 
+.out-book__icon-close {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -30,10 +32,12 @@
     border-radius: 2px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 }
-.new-book__icon-close:hover {
+.new-book__icon-close:hover,
+.out-book__icon-close:hover {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
 }
-.new-book__input-field {
+.new-book__input-field,
+.out-book__input-field {
     width: 40px;
     padding: 0 5px;
     height: 25px;
@@ -49,16 +53,27 @@
     border-radius: 5px;
 }
 
-.new-book__input-field:focus {
+.out-book__input-field {
+    width: 80px;
+    text-transform: uppercase;
+}
+.out-book__input-field::placeholder{
+    text-transform: capitalize;
+}
+
+.new-book__input-field:focus, 
+.out-book__input-field:focus {
     box-shadow: 1px 0px 10px rgba(0, 0, 0, .5);
 }
 
-.new-book__input-field::placeholder {
+.new-book__input-field::placeholder,
+.out-book__input-field::placeholder {
     color: grey;
     -webkit-text-fill-color: grey;
 }
 
-.new-book__buttom-field {
+.new-book__buttom-field,
+.out-book__buttom-field {
     padding: 5px 10px;
     font-size: .75rem;
     color: white;
@@ -68,12 +83,14 @@
     border-radius: 5px;
 }
 
-.new-book__buttom-field:active {
+.new-book__buttom-field:active,
+.out-book__buttom-field:active {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
 
 @media screen and ( min-width: 768px ) {
-    .new-book {
+    .new-book,
+    .out-book {
         height: 120px;
         font-size: 1.6rem;
     }
@@ -82,26 +99,35 @@
         height: 45px;
         font-size: 1.1rem;
     }
-
-    .new-book__buttom-field {
+    .out-book__input-field {
+        width: 120px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .new-book__buttom-field,
+    .out-book__buttom-field {
         padding: 10px 25px;
         font-size: 1.3rem;
     }
 
-    .new-book__icon-close {
+    .new-book__icon-close,
+    .out-book__icon-close {
         position: absolute;
         top: 10px;
         left: 10px;
         font-size: 1.6rem;
     }
+
+    
 }
 
 @media screen and ( min-width: 992px ) {
-    .add-product__magic-show:checked ~ .new-book{
-        left: 7.5%;
-    }
+    .new-book__magic-show:checked ~ .new-book,
+    .out-book__magic-show:checked ~ .out-book { left: 7.5%; }
 
-    .new-book {
+    .new-book,
+    .out-book {
         width: 85%;
         height: 70px;
         top: 0;
@@ -109,19 +135,27 @@
         font-size: 1rem;
     }
 
-    .new-book__input-field {
+    .new-book__input-field,
+    .out-book__input-field {
         width: 70px;
         height: 30px;
         text-align: center;
         font-size: .85rem;
     }
 
-    .new-book__buttom-field {
+    .out-book__input-field {
+        width: 150px;
+        height: 35px;
+        font-size: .9rem;
+    }
+    .new-book__buttom-field,
+    .out-book__buttom-field {
         padding: 7px 15px;
         font-size: .8rem;
     }
 
-    .new-book__icon-close {
+    .new-book__icon-close,
+    .out-book__icon-close {
         position: absolute;
         top: 5px;
         left: 5px;

@@ -5,10 +5,11 @@ import SubHeader from '../SubHeader';
 import ProductList from '../ProductList';
 import AddProduct from '../Footer';
 
-function App() {
+export default (props) => {
+
   return (
     <Fragment>
-        <Header />
+      <Header />
       <div className="App">
         <SubHeader />
         <ProductList />
@@ -17,5 +18,3 @@ function App() {
     </Fragment>
   );
 }
-
-export default App;
