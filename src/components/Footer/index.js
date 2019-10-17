@@ -4,7 +4,7 @@ import NewProduct from '../NewProduct';
 
 import './style.css'
 
-export default () => (
+export default (props) => (
     <Fragment>
         <div className="add-product">
             <label htmlFor="close" className="add-product__icon-button">
@@ -13,6 +13,11 @@ export default () => (
         </div>
         <input type="checkbox" id="close" className="add-product__magic-show" />
 
-        <NewProduct />
+        {/* 
+            repassando a função do avô para o neto - 
+            comunicação indireta de componentes
+            forma alternativa ao redux, já que o projeto é pequeno
+        */}
+        <NewProduct addProduct={props.addProduct.bind(this)} />
     </Fragment>
 )
