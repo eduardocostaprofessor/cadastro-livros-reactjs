@@ -1,0 +1,86 @@
+.login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px solid salmon; */
+}
+
+.login__container {
+    position: relative;
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(137, 232, 229, 0.7);
+    border-top-left-radius: 25px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.login__lock-container {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.login__lock-icon {
+    font-size: 2rem;
+    color: #53c1bd;
+}
+
+.login__data, .login__post-buttom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 40px;
+    font-size: 1rem;
+    color: grey;
+    background-color: white;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .2);
+    border: 1px solid white;
+}
+
+.login__data:hover, .login__post-buttom:hover {
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, .3);
+}
+
+.login__data {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #53c1bd;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+
+.login__post-buttom:hover {
+    color: #53c1bd;
+}
+
+.login__post-icon {
+    margin-left: 5px;
+    font-size: .9rem;
+}
+
+@media screen and (min-width: 768px) {
+    .login__container {
+        max-width: 650px;
+    }
+}

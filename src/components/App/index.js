@@ -1,4 +1,7 @@
 import React, { Fragment, Component } from 'react';
+
+import { isAuthenticated } from '../../auth';
+import { Route, Redirect } from "react-router-dom";
 import './styles.css';
 import Header from '../Header';
 import SubHeader from '../SubHeader';
@@ -6,7 +9,22 @@ import ProductList from '../ProductList';
 import AddProduct from '../Footer';
 import axios from 'axios';
 
-export default class App extends Component {
+
+export default ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      isAuthenticated() ? (
+        // <Component {...props} />
+        <App />
+      ) : (
+          <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
+        )
+    }
+  />
+);
+
+class App extends Component {
 
   constructor() {
     super();
@@ -48,18 +66,3 @@ export default class App extends Component {
     );
   }
 }
-
-
-// export default (props) => {
-
-//   return (
-//     <Fragment>
-//       <Header />
-//       <div className="App">
-//         <SubHeader />
-//         <ProductList />
-//         <AddProduct />
-//       </div>
-//     </Fragment>
-//   );
-// }

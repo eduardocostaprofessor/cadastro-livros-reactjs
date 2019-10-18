@@ -35,7 +35,11 @@ export default class Product extends Component {
                         qtd: quantity
                     }
                 });
-    
+                
+                //reseta os campos
+                document.getElementById(`close${this.state.product.id}`).checked = false;
+                document.getElementById(`close${this.state.product.id}`).checked = false;
+                
                 alert('Livro atualizado com sucesso!');
             })).catch(error => {
                 alert('Não foi possível atualizar os dados do livro. Tente novamente mais tarde')
@@ -44,19 +48,26 @@ export default class Product extends Component {
 
     }
 
-    insertBookOut = () => {
+    insertBookOut = async () => {
         let turma    = document.getElementById(`turma${this.state.product.id}`).value
         let saidaQtd = document.getElementById(`saidaQtd${this.state.product.id}`).value
         let bookId = this.state.product.id
 
-        axios.post(`http://localhost:3002/api/booksOut`, { 
+        await axios.post(`http://localhost:3002/api/booksOut`, { 
             title : this.state.product.title,
             quantity: saidaQtd,
             turma,
             bookId,
             userId: "5da79968b1d75f067b621f1f"
         },{headers: { 'Content-Type': 'application/json' }}).then((res => {
-            this.updateBookQuantity(-saidaQtd)
+            
+            if (this.updateBookQuantity(-saidaQtd)){
+                //reseta os campos
+                document.getElementById(`turma${this.state.product.id}`).value = "";
+                document.getElementById(`saidaQtd${this.state.product.id}`).value = "";
+                document.getElementById(`closebo${this.state.product.id}`).checked = false;
+            }
+
         })).catch(error => {
             alert('Não foi possível atualizar os dados do livro. Tente novamente mais tarde')
         })

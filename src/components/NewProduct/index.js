@@ -21,9 +21,16 @@ const insertBook = async(props) => {
     await axios.post('http://localhost:3002/api/books', newBook, {
         headers: { 'Content-Type': 'application/json' }
     }).then(res => {
-        //retorna para o pai que retorna para o avô App
-        props.addProduct(res.data);
+
+        props.addProduct(res.data);//retorna para o pai que retorna para o avô App
+        
+        //reseta os campos
+        document.getElementById('productName').value = "";
+        document.getElementById('productQtd').value = "";
+        document.getElementById('close').checked = false;
+        
         alert('Livro cadastrado com sucesso');
+
     }).catch(error => alert('Livro cadastrado com sucesso'));
 }
 

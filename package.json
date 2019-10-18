@@ -7,6 +7,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2"
   },
   "scripts": {
@@ -29,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-router": "^3.0.2"
   }
 }
