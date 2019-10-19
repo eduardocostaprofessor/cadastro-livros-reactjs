@@ -1,5 +1,1 @@
-sessionStorage.setItem('bookSistemUSer', '');
-
-
-
-export const isAuthenticated = () => true;
+export const isAuthenticated = () => sessionStorage.getItem('bookSistemUSer');

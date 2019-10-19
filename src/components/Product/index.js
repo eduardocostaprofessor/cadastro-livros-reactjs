@@ -49,6 +49,9 @@ export default class Product extends Component {
 
     }
 
+    /**
+     * Cadastra a saída do livro
+     */
     insertBookOut = async () => {
         let turma    = document.getElementById(`turma${this.state.product.id}`).value
         let saidaQtd = document.getElementById(`saidaQtd${this.state.product.id}`).value
@@ -61,7 +64,9 @@ export default class Product extends Component {
             bookId,
             userId: "5da79968b1d75f067b621f1f"
         },{headers: { 'Content-Type': 'application/json' }}).then((res => {
-            
+            /**
+             * Atualiza  o state sem precisar fazer outra requisição
+             */
             if (this.updateBookQuantity(-saidaQtd)){
                 //reseta os campos
                 document.getElementById(`turma${this.state.product.id}`).value = "";

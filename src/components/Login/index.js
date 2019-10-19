@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './style.css'
 import { MdLock, MdSend } from "react-icons/md";
 
+// console.log( `Usuário :  ${sessionStorage.getItem('bookSistemUSer')}`);
+
 export default class Login extends Component {
     constructor() {
         super();
@@ -12,8 +14,18 @@ export default class Login extends Component {
         event.preventDefault();
 
         const data = new FormData(event.target);
-        console.log(data.get('user'));
-        console.log(data.get('userPass'));
+        const user = data.get('user');
+        const userPass = data.get('userPass');
+        
+        if(user === 'admin' && userPass === 'Oliver@132'){
+            sessionStorage.setItem('bookSistemUSer', true);
+            window.location.href = '/'
+        } else {
+            sessionStorage.setItem('bookSistemUSer', false);
+            alert('Usuário ou senha inválido')
+            
+        }
+
         
 
         // fetch('/api/form-submit-url', {

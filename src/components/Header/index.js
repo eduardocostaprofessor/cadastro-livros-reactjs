@@ -10,6 +10,6 @@ export default (props) => (
             <Link to="/" className='header__link'>Livros</Link>
             <Link to="/booksout" className='header__link'>Saída de Livros</Link>
         </div>
-        <Link to="/login" className='header__link'>Logout</Link>
+        <Link to="/logout" className='header__link'>Logout</Link>
     </header>
 )

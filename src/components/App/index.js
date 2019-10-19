@@ -9,13 +9,14 @@ import ProductList from '../ProductList';
 import AddProduct from '../Footer';
 import axios from 'axios';
 import { API_URL } from '../../config';
+console.log(isAuthenticated());
 
 export default ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      isAuthenticated() ? (
-        // <Component {...props} />
+      isAuthenticated() === 'true' ? (
+        // <App {...props} />
         <App />
       ) : (
           <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
@@ -37,10 +38,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-
+    console.log(API_URL);
+    
     axios.get(`${API_URL}/books/?page=1`).then(res => {
       const products = res.data.docs;
       const { limit, page, pages, total } = res.data;
+      console.log(res.data);
+      
       this.setState({ products, dataPage: { limit, page, pages, total } });
     });
   }
