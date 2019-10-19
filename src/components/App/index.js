@@ -8,7 +8,7 @@ import SubHeader from '../SubHeader';
 import ProductList from '../ProductList';
 import AddProduct from '../Footer';
 import axios from 'axios';
-
+import { API_URL } from '../../config';
 
 export default ({ component: Component, ...rest }) => (
   <Route
@@ -38,7 +38,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    axios.get('http://localhost:3002/api/books/?page=1').then(res => {
+    axios.get(`${API_URL}/books/?page=1`).then(res => {
       const products = res.data.docs;
       const { limit, page, pages, total } = res.data;
       this.setState({ products, dataPage: { limit, page, pages, total } });

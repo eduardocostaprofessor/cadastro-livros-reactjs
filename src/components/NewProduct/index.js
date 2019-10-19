@@ -1,7 +1,9 @@
 import React from 'react';
-import { MdClose } from "react-icons/md";
+import { API_URL } from '../../config';
 import axios from 'axios';
 
+
+import { MdClose } from "react-icons/md";
 import './style.css'
 
 const insertBook = async(props) => {
@@ -18,7 +20,7 @@ const insertBook = async(props) => {
     let newBook = { "title": title, "quantity": qtd, userId };
 
     //insere novo livro
-    await axios.post('http://localhost:3002/api/books', newBook, {
+    await axios.post(`${API_URL}/books`, newBook, {
         headers: { 'Content-Type': 'application/json' }
     }).then(res => {
 
