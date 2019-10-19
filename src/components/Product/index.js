@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config';
 
 import { MdEdit, MdClose, MdRemove} from "react-icons/md";
 import './style.css';
@@ -26,7 +27,7 @@ export default class Product extends Component {
         if (this.state.newQuantity !== "") {
 
             await this.setState({ quantity: this.state.quantity + parseInt(this.state.newQuantity) });
-            axios.put(`http://localhost:3002/api/books/${this.props.id}`, { quantity: this.state.quantity }).then((res => {
+            axios.put(`${API_URL}/books/${this.props.id}`, { quantity: this.state.quantity }).then((res => {
                 const { _id, title, quantity } = res.data;
                 this.setState({
                     product: {
@@ -53,7 +54,7 @@ export default class Product extends Component {
         let saidaQtd = document.getElementById(`saidaQtd${this.state.product.id}`).value
         let bookId = this.state.product.id
 
-        await axios.post(`http://localhost:3002/api/booksOut`, { 
+        await axios.post(`${API_URL}/booksOut`, { 
             title : this.state.product.title,
             quantity: saidaQtd,
             turma,
