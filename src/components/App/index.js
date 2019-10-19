@@ -9,7 +9,7 @@ import ProductList from '../ProductList';
 import AddProduct from '../Footer';
 import axios from 'axios';
 import { API_URL } from '../../config';
-console.log(isAuthenticated());
+// console.log(isAuthenticated());
 
 export default ({ component: Component, ...rest }) => (
   <Route
